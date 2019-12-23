@@ -35,3 +35,4 @@ enumeration after nmap for http port can test to curl first
   steghide embed -cf php-logo.jpeg -ef shell.php
 }
 
+https://medium.com/@cc1h2e1/bug-bounty-check-list-by-c1-2beb7ae3c116
